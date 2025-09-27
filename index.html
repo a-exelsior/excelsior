@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My exelsior website</title>
+    <style>
+        #logo {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+            mix-blend-mode: multiply;
+        }
+        #title {
+            text-align: center;
+            font-family: Arial, 'Segoe UI', Tahoma, Verdana, sans-serif;
+            color: rgb(25, 55, 109)
+        }
+        #para {
+            text-align: center;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            color: rgb(25, 55, 109);
+        }
+        body {
+            background: linear-gradient(to bottom, rgb(65, 131, 201), rgb(223, 223, 37), rgb(6, 66, 144));
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[list="brow"] {
+        border-radius: 24px;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        margin: 20px auto;
+        display: block;
+        align-items: left;
+    }
+
+    #brow {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: left;
+    }            
+    </style>
+</head>
+<body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const datalist = document.getElementById('brow');
+        const inputElement = document.querySelector('input[list="brow"]');
+
+        inputElement.addEventListener('input', function() {
+            const selectedValue = this.value;
+
+            // Define the mapping of values to page names
+            const pageMap = {
+                "school lessons": "schoollessons.html",
+                "school behaviour policy": "schoolbehaviourpolicy.html",
+                "school uniform": "schooluniform.html",
+                "school term dates": "schooltermdates.html",
+                "school contact details": "schoolcontactdetails.html"
+            };
+
+            // Check if the selected value exists in the pageMap
+            if (pageMap.hasOwnProperty(selectedValue)) {
+                // Redirect to the corresponding page
+                window.location.href = pageMap[selectedValue];
+            }
+        });
+
+        inputElement.setAttribute('placeholder', 'Search anything about The Exelsior Academy...');
+    });
+</script>
+
+<input list="brow">
+<datalist id="brow">
+    <option value="school lessons">
+    <option value="school behaviour policy">
+    <option value="school uniform">
+    <option value="school term dates">
+    <option value="school contact details">
+</datalist>
+
+    <img id="logo" src="https://media.licdn.com/dms/image/v2/D4E0BAQFMSoudXFA8_g/company-logo_200_200/company-logo_200_200/0/1713856169621?e=2147483647&v=beta&t=RDCjf2T4xnCa_nlKrHw3K4qTCTJtLZgHwEwGXgzw_eg"></img>
+    <article>
+    <h1 id="title">Welcome to the Exelsior Academy</h1>
+    <p id="para">The Petchey Academy is a thriving secondary school<br> and sixth form in Hackney, offering a strong and ambitious<br> curriculum, excellent support for SEND students, and above-average<br> academic progress. Students consistently achieve impressive GCSE<br> and A-level results, while also benefiting<br> from a safe, inclusive, and supportive school culture that helps<br> them grow both academically and personally.</p>
+    </article>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputElement = document.querySelector('input[list="brow"]');
+        inputElement.setAttribute('placeholder', 'Search anything about The Exelsior Academy...');
+    });
+</script>
